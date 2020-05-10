@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Bootstrap.AspNetCore.Middlewares;
-using Gobi.Bootstrap;
+using Gobi.Bootstrap.AspNetCore.Middlewares;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Bootstrap.AspNetCore.Extensions
+namespace Gobi.Bootstrap.AspNetCore.Extensions
 {
     public static class ApplicationBuilderExtensions
     {
@@ -17,10 +16,7 @@ namespace Bootstrap.AspNetCore.Extensions
             var lifetime = applicationBuilder.ApplicationServices.GetRequiredService<IHostApplicationLifetime>();
             var runner = applicationBuilder.ApplicationServices.GetRequiredService<BootstrapRunner>();
 
-            var cs = new CancellationTokenSource();
-
-            lifetime.ApplicationStarted.Register(() => runner.RunAsync(bootstrap, cs.Token));
-            lifetime.ApplicationStopped.Register(() => cs.Cancel());
+            lifetime.ApplicationStarted.Register(() => runner.RunAsync(bootstrap, lifetime.ApplicationStopped));
 
             return applicationBuilder.UseMiddleware<BootstrapMiddleware>();
         }

@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateBootstrap", "Exampl
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{A16A5FA2-E2AF-4D50-9536-989677B368C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootstrap.Tests", "Bootstrap.Tests\Bootstrap.Tests.csproj", "{3D19569F-F731-4299-B67D-50D17ADA037F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{DD06BFAA-B5A8-437E-B46C-9F65C1C11A9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD06BFAA-B5A8-437E-B46C-9F65C1C11A9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD06BFAA-B5A8-437E-B46C-9F65C1C11A9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D19569F-F731-4299-B67D-50D17ADA037F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D19569F-F731-4299-B67D-50D17ADA037F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D19569F-F731-4299-B67D-50D17ADA037F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D19569F-F731-4299-B67D-50D17ADA037F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DD06BFAA-B5A8-437E-B46C-9F65C1C11A9C} = {A16A5FA2-E2AF-4D50-9536-989677B368C1}

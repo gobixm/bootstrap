@@ -1,8 +1,7 @@
 ﻿using System.Threading.Tasks;
-using Gobi.Bootstrap;
 using Microsoft.AspNetCore.Http;
 
-namespace Bootstrap.AspNetCore.Middlewares
+namespace Gobi.Bootstrap.AspNetCore.Middlewares
 {
     internal class BootstrapMiddleware
     {

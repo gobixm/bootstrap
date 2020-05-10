@@ -1,7 +1,6 @@
-﻿using Gobi.Bootstrap;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace Bootstrap.AspNetCore.Extensions
+namespace Gobi.Bootstrap.AspNetCore.Extensions
 {
     public static class ServiceCollectionExtensions
     {

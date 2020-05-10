@@ -2,6 +2,8 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
+        <AssemblyName>Gobi.Bootstrap.AspNetCore</AssemblyName>
+        <RootNamespace>Gobi.Bootstrap.AspNetCore</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
