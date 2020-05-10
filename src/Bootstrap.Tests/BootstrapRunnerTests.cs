@@ -8,7 +8,10 @@ using Xunit;
 
 namespace Gobi.Bootstrap.Tests
 {
-    public class BootstrapRunnerTests
+    /// <summary>
+    ///     <see cref="BootstrapRunner" />
+    /// </summary>
+    public sealed class BootstrapRunnerTests
     {
         public BootstrapRunnerTests()
         {
