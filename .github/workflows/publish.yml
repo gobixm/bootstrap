@@ -1,0 +1,42 @@
+name: Publish to nuget
+on:
+  push:
+    branches:
+      - master
+
+defaults:
+  run:
+    shell: bash
+    working-directory: src
+
+jobs:
+  publish:
+    name: build, pack & publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.200
+
+      - name: Publish Gobi.Bootstrap
+        id: publish_nuget_bootstrap
+        uses: rohith/publish-nuget@v2
+        with:
+          PROJECT_FILE_PATH: Bootstrap/Bootstrap.csproj          
+          PACKAGE_NAME: Gobi.Bootstrap
+          VERSION_REGEX: <Version>(.*)<\/Version>
+          TAG_FORMAT: v*
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+
+      - name: Publish Gobi.Bootstrap.AspNetCore
+        id: publish_nuget_bootstrap_aspnetcore
+        uses: rohith/publish-nuget@v2
+        with:
+          PROJECT_FILE_PATH: Bootstrap.AspNetCore/Bootstrap.AspNetCore.csproj          
+          PACKAGE_NAME: Gobi.Bootstrap.AspNetCore
+          VERSION_REGEX: <Version>(.*)<\/Version>
+          TAG_FORMAT: v*
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}

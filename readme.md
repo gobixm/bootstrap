@@ -1,3 +1,4 @@
+![.NET Core](https://github.com/gobixm/bootstrap/workflows/Build/badge.svg?branch=master)
 # Description
 
 Runs bootstrap actions asynchronously after application starts, returning 503 while bootstrap in progress.
