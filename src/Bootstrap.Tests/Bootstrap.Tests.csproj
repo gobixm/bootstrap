@@ -16,6 +16,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Bootstrap.AspNetCore\Bootstrap.AspNetCore.csproj" />
       <ProjectReference Include="..\Bootstrap\Bootstrap.csproj" />
     </ItemGroup>
 

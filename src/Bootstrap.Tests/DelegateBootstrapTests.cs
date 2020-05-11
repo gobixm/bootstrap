@@ -15,7 +15,7 @@ namespace Gobi.Bootstrap.Tests
         [Fact]
         public async Task BootstrapAsync_Delegate_Called()
         {
-            // assign
+            // arrange
             var bootstrapAction = new Mock<Func<IServiceProvider, IBootstrapState, CancellationToken, Task>>();
             var bootstrap = new DelegateBootstrap(bootstrapAction.Object);
             var serviceProvider = new ServiceCollection().BuildServiceProvider();

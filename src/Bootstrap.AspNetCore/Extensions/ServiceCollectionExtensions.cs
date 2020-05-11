@@ -6,7 +6,7 @@ namespace Gobi.Bootstrap.AspNetCore.Extensions
     {
         public static IServiceCollection AddBootstrap(this IServiceCollection serviceCollection)
         {
-            return serviceCollection.AddSingleton<BootstrapRunner>();
+            return serviceCollection.AddSingleton<IBootstrapRunner, BootstrapRunner>();
         }
     }
 }

@@ -1,14 +1,16 @@
-﻿using System.Threading.Tasks;
+﻿using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
+[assembly: InternalsVisibleTo("Gobi.Bootstrap.Tests")]
 namespace Gobi.Bootstrap.AspNetCore.Middlewares
 {
     internal class BootstrapMiddleware
     {
-        private readonly BootstrapRunner _bootstrapRunner;
+        private readonly IBootstrapRunner _bootstrapRunner;
         private readonly RequestDelegate _next;
 
-        public BootstrapMiddleware(RequestDelegate next, BootstrapRunner bootstrapRunner)
+        public BootstrapMiddleware(RequestDelegate next, IBootstrapRunner bootstrapRunner)
         {
             _next = next;
             _bootstrapRunner = bootstrapRunner;
@@ -23,7 +25,7 @@ namespace Gobi.Bootstrap.AspNetCore.Middlewares
             }
 
             context.Response.StatusCode = 503;
-            await context.Response.WriteAsync(_bootstrapRunner.Progress);
+            await context.Response.WriteAsync(_bootstrapRunner.Progress ?? string.Empty);
         }
     }
 }

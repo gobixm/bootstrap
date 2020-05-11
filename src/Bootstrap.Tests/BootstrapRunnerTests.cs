@@ -25,7 +25,7 @@ namespace Gobi.Bootstrap.Tests
         [Fact]
         public async Task RunAsync_Bootstrap_Called()
         {
-            // assign
+            // arrange
             var cancellationToken = new CancellationToken();
 
             // act
@@ -42,7 +42,7 @@ namespace Gobi.Bootstrap.Tests
         [Fact]
         public async Task RunAsync_Exception_Propagated()
         {
-            // assign
+            // arrange
             _bootstrapMock.Setup(x => x.BootstrapAsync(
                     It.IsAny<IServiceProvider>(),
                     It.IsAny<IBootstrapState>(),
@@ -101,7 +101,7 @@ namespace Gobi.Bootstrap.Tests
         [Fact]
         public async Task RunAsync_Progress_Saved()
         {
-            // assign
+            // arrange
             _bootstrapMock.Setup(x => x.BootstrapAsync(
                     It.IsAny<IServiceProvider>(),
                     It.IsAny<IBootstrapState>(),
@@ -121,7 +121,7 @@ namespace Gobi.Bootstrap.Tests
         [Fact]
         public async Task RunAsync_Progress_Updated()
         {
-            // assign
+            // arrange
             _bootstrapMock.Setup(x => x.BootstrapAsync(
                     It.IsAny<IServiceProvider>(),
                     It.IsAny<IBootstrapState>(),

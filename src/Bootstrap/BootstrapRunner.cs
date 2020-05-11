@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Gobi.Bootstrap
 {
-    public sealed class BootstrapRunner
+    public sealed class BootstrapRunner : IBootstrapRunner
     {
         private readonly IServiceProvider _serviceProvider;
         private readonly IBootstrapState _state = new BootstrapState();

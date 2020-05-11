@@ -14,7 +14,7 @@ namespace Gobi.Bootstrap.AspNetCore.Extensions
             IBootstrap bootstrap)
         {
             var lifetime = applicationBuilder.ApplicationServices.GetRequiredService<IHostApplicationLifetime>();
-            var runner = applicationBuilder.ApplicationServices.GetRequiredService<BootstrapRunner>();
+            var runner = applicationBuilder.ApplicationServices.GetRequiredService<IBootstrapRunner>();
 
             lifetime.ApplicationStarted.Register(() => runner.RunAsync(bootstrap, lifetime.ApplicationStopped));
 
