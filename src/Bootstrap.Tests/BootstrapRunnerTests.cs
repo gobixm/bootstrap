@@ -23,6 +23,13 @@ namespace Gobi.Bootstrap.Tests
         private readonly IServiceProvider _serviceProvider = new ServiceCollection().BuildServiceProvider();
 
         [Fact]
+        public void BootstrapRunner_IsCompleted_InitiallyFalse()
+        {
+            // assert
+            _bootstrapRunner.IsCompleted.Should().BeFalse();
+        }
+
+        [Fact]
         public async Task RunAsync_Bootstrap_Called()
         {
             // arrange
@@ -57,13 +64,6 @@ namespace Gobi.Bootstrap.Tests
         }
 
         [Fact]
-        public async Task RunAsync_IsCompleted_InitiallyFalse()
-        {
-            // assert
-            _bootstrapRunner.IsCompleted.Should().BeFalse();
-        }
-
-        [Fact]
         public async Task RunAsync_IsCompleted_True()
         {
             // act
@@ -92,7 +92,6 @@ namespace Gobi.Bootstrap.Tests
             {
                 // ignored
             }
-
 
             // assert
             _bootstrapRunner.IsCompleted.Should().BeTrue();

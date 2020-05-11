@@ -4,11 +4,6 @@ on:
     branches:
       - master
 
-defaults:
-  run:
-    shell: bash
-    working-directory: src
-
 jobs:
   publish:
     name: build, pack & publish
@@ -25,7 +20,7 @@ jobs:
         id: publish_nuget_bootstrap
         uses: rohith/publish-nuget@v2
         with:
-          PROJECT_FILE_PATH: Bootstrap/Bootstrap.csproj          
+          PROJECT_FILE_PATH: src/Bootstrap/Bootstrap.csproj          
           PACKAGE_NAME: Gobi.Bootstrap
           VERSION_REGEX: <Version>(.*)<\/Version>
           TAG_FORMAT: v*
@@ -35,7 +30,7 @@ jobs:
         id: publish_nuget_bootstrap_aspnetcore
         uses: rohith/publish-nuget@v2
         with:
-          PROJECT_FILE_PATH: Bootstrap.AspNetCore/Bootstrap.AspNetCore.csproj          
+          PROJECT_FILE_PATH: src/Bootstrap.AspNetCore/Bootstrap.AspNetCore.csproj          
           PACKAGE_NAME: Gobi.Bootstrap.AspNetCore
           VERSION_REGEX: <Version>(.*)<\/Version>
           TAG_FORMAT: v*
